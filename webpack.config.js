@@ -4,13 +4,20 @@ module.exports = {
   mode: 'development',
 
   // メインとなるJavaScriptファイル（エントリーポイント）
-  entry: './src/main.ts',
+  entry: "./src/main.tsx",
+
+  output: {
+    //  出力ファイルのディレクトリ名
+    path: `${__dirname}/dist`,
+    // 出力ファイル名
+    filename: "main.js"
+  },
 
   module: {
     rules: [
       {
         // 拡張子 .ts の場合
-        test: /\.ts$/,
+        test: /\.tsx?$/,
         // TypeScript をコンパイルする
         use: {
           loader: 'ts-loader',
@@ -23,8 +30,6 @@ module.exports = {
   },
   resolve: {
     // 拡張子を配列で指定
-    extensions: [
-      '.ts', '.js',
-    ],
+    extensions: [".ts", ".tsx", ".js", ".json"]
   },
 };
