@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { SubComponent } from './sub-component';
+import SubComponent from './sub-component';
 
 const App = () => (
   <div>
@@ -8,6 +8,7 @@ const App = () => (
     <SubComponent name="My Counter for TypeScript" />
   </div>
 );
+
 
 const root = document.getElementById('root');
 

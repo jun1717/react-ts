@@ -4,19 +4,19 @@ module.exports = {
   mode: 'development',
 
   // メインとなるJavaScriptファイル（エントリーポイント）
-  entry: "./src/main.tsx",
+  entry: './src/main.tsx',
 
   output: {
     //  出力ファイルのディレクトリ名
     path: `${__dirname}/dist`,
     // 出力ファイル名
-    filename: "main.js"
+    filename: 'main.js',
   },
 
   devServer: {
     contentBase: `${__dirname}/dist`,
     port: 8080,
-    open: true
+    open: true,
   },
 
   devtool: 'inline-source-map',
@@ -31,13 +31,13 @@ module.exports = {
           loader: 'ts-loader',
           options: {
             transpileOnly: true,
-          }
+          },
         },
       },
     ],
   },
   resolve: {
     // 拡張子を配列で指定
-    extensions: [".ts", ".tsx", ".js", ".json"]
+    extensions: ['.ts', '.tsx', '.js', '.json'],
   },
 };

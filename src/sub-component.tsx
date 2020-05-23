@@ -9,7 +9,7 @@ interface IState {
   count: number;
 }
 
-export class SubComponent extends React.Component<IProps, IState> {
+class SubComponent extends React.Component<IProps, IState> {
   constructor(props) {
     super(props);
     this.state = {
@@ -18,20 +18,24 @@ export class SubComponent extends React.Component<IProps, IState> {
   }
 
   handleClick() {
-    console.log('クリックされました');
+    const { count } = this.state;
 
     this.setState({
-      count: this.state.count + 1,
+      count: count + 1,
     });
   }
 
   render() {
+    const { name } = this.props;
+    const { count } = this.state;
     return (
       <div>
-        <h2>{this.props.name}</h2>
-        <div>{this.state.count}</div>
-        <button onClick={this.handleClick.bind(this)}>Add +1</button>
+        <h2>{name}</h2>
+        <div>{count}</div>
+        <button type="button" onClick={this.handleClick.bind(this)}>Add +1</button>
       </div>
     );
   }
 }
+
+export default SubComponent;
