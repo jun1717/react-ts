@@ -13,6 +13,14 @@ module.exports = {
     filename: "main.js"
   },
 
+  devServer: {
+    contentBase: `${__dirname}/dist`,
+    port: 8080,
+    open: true
+  },
+
+  devtool: 'inline-source-map',
+
   module: {
     rules: [
       {
