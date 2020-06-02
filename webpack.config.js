@@ -4,7 +4,7 @@ module.exports = {
   mode: 'development',
 
   // メインとなるJavaScriptファイル（エントリーポイント）
-  entry: './src/main.tsx',
+  entry: './src/index.tsx',
 
   output: {
     //  出力ファイルのディレクトリ名
@@ -24,6 +24,10 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
         // 拡張子 .ts の場合
         test: /\.tsx?$/,
         // TypeScript をコンパイルする
@@ -38,6 +42,6 @@ module.exports = {
   },
   resolve: {
     // 拡張子を配列で指定
-    extensions: ['.ts', '.tsx', '.js', '.json'],
+    extensions: ['.ts', '.tsx', '.js', '.json', 'css'],
   },
 };

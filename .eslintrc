@@ -20,7 +20,8 @@
           ".jsx",
           ".json",
           ".ts",
-          ".tsx"
+          ".tsx",
+          ".d.ts"
         ]
       }
     }
@@ -41,6 +42,7 @@
         "ts": "never",
         "tsx": "never"
       }
-    ]
+    ],
+    "@typescript-eslint/no-unused-vars": "error"
   }
 }
